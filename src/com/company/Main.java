@@ -8,24 +8,24 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Scanner s = new Scanner(new FileReader("named names.txt"));
-        List<FileObject> al = new ArrayList<FileObject>();
+        List<FileObject1> al = new ArrayList<FileObject1>();
         while(s.hasNextLine()){
             String line = s.nextLine();
-            al.add(new FileObject().createFileObject(line));
+            al.add(new FileObject1().createFileObject(line));
         }
         Collections.sort(al, new FileObjectComparator());
-        for(FileObject i: al)
+        for(FileObject1 i: al)
             System.out.println(i);
     }
 }
 
-class FileObject{
+class FileObject1{
     private int sn;
     private String name;
     private double avgtotalgrade;
     private int frqq1, frqq2;
 
-    public FileObject createFileObject(String line)
+    public FileObject1 createFileObject(String line)
     {
         if(line != null && !line.isEmpty())
         {
@@ -48,9 +48,9 @@ class FileObject{
     }
 }
 
-class FileObjectComparator implements Comparator<FileObject>{
+class FileObjectComparator implements Comparator<FileObject1>{
     @Override
-    public int compare(FileObject o1, FileObject o2){
-        return o2.get
+    public int compare(FileObject1 o1, FileObject1 o2){
+        return 5;
     }
 }
